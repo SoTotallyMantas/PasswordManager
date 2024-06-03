@@ -118,6 +118,7 @@
             PasswordDataGrid.ReadOnly = true;
             PasswordDataGrid.Size = new Size(575, 396);
             PasswordDataGrid.TabIndex = 10;
+            PasswordDataGrid.CellClick += PasswordDataGrid_CellClick;
             PasswordDataGrid.SelectionChanged += PasswordDataGrid_SelectionChanged;
             // 
             // label2

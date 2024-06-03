@@ -230,8 +230,26 @@ namespace PasswordManager
 
         private void GeneratePasswordButton_Click(object sender, EventArgs e)
         {
-            
+
             PasswordTextBox.Text = PasswordGenerator.GeneratePassword(8);
+        }
+
+        private void PasswordDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (PasswordDataGrid.Rows.Count > 0)
+            {
+                
+                if (PasswordDataGrid.Rows[e.RowIndex].Cells[0].Value != null)
+                {
+                    PasswordTextBox.Text = PasswordDataGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    URLTextBox.Text = PasswordDataGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    NameTextBox.Text = PasswordDataGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    DescriptionRichBox.Text = PasswordDataGrid.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    PasswordTextBox.UseSystemPasswordChar = true;
+                }
+
+            }
+
         }
     }
 }
