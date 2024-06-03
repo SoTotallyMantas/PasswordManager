@@ -100,6 +100,7 @@
             Controls.Add(UserNameTextBox);
             Name = "Register";
             Text = "Register";
+            FormClosing += Register_FormClosing;
             ResumeLayout(false);
             PerformLayout();
         }
